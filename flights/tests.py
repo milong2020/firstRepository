@@ -71,6 +71,7 @@ class FlightsTestCase(TestCase):
         c = Client()
         response = c.get(f"/{f.id}")
         self.assertEqual(response.status_code, 200)
+        //self.assertEqual(response.context["passengers"].count(), 1)
         self.assertEqual(response.context["passengers"].count(), 1)
 
     def test_flight_page_non_passengers(self):
